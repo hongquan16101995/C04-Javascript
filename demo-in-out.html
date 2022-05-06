@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="data">
+<p id="result"></p>
+<button onclick="getData()">GetData</button>
+<button onclick="getInput()">GetInput</button>
+<button onclick="demo()">DemoWrite</button>
+<button onclick="demo1()">DemoInner</button>
+</body>
+<script>
+    function getData() {
+        //hàm nhập vào sử dụng hàm có sẵn prompt
+        let data = prompt("Nhập cái gì đó...")
+        //hàm xuất dữ liệu sử dụng console
+        console.log(data)
+    }
+
+    function getInput() {
+        //hàm lấy dữ liệu của input thông qua id
+        let data = document.getElementById("data").value
+        //hàm xuất dạng dialog box trên màn hình
+        // alert(data)
+        //hàm xuất dạng dialog box trên màn hình, trả về giá trị đúng sai
+        console.log(confirm(data))
+
+    }
+
+    function demo() {
+        //xóa các thành phần trên màn hình và viết lại giá trị trong write
+        document.write("C0422H1")
+    }
+
+    function demo1() {""
+        //thay thế giá trị của thành phần mang id được chỉ định
+        // document.getElementById("result").innerText = "<b>C0422H1</b>"
+        document.getElementById("result").innerHTML = "<b>C0422H1</b>"
+    }
+
+</script>
+</html>
