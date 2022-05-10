@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<input type="text" id="number1">
+<input type="text" id="number2"><br><br>
+<button onclick="add()">Add(+)</button>
+<button onclick="sub()">Sub(-)</button>
+<button onclick="multi()">Multi(x)</button>
+<button onclick="div()">Div(/)</button>
+<p>Result: <span id="result"></span></p>
+</body>
+<script>
+    function add() {
+        let num1 = parseFloat(document.getElementById("number1").value)
+        let num2 = parseFloat(document.getElementById("number2").value)
+        document.getElementById("result").innerHTML = (num1 + num2)
+    }
+
+    function sub() {
+        let num1 = parseFloat(document.getElementById("number1").value)
+        let num2 = parseFloat(document.getElementById("number2").value)
+            document.getElementById("result").innerHTML = (num1 - num2)
+    }
+
+    function multi() {
+        let num1 = parseFloat(document.getElementById("number1").value)
+        let num2 = parseFloat(document.getElementById("number2").value)
+        document.getElementById("result").innerHTML = (num1 * num2)
+    }
+
+    function div() {
+        let num1 = parseFloat(document.getElementById("number1").value)
+        let num2 = parseFloat(document.getElementById("number2").value)
+        document.getElementById("result").innerHTML = (num1 / num2)
+    }
+</script>
+</html>

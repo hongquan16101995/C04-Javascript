@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--sự kiện click chuột vào nút thì gọi hàm ở dưới-->
+<button type="button" onclick="demoEvent()">ClickMe</button>
+<p onclick="demoEvent()">ClickMe</p>
+<!--sự kiện chuột đi qua nút thì gọi hàm ở dưới-->
+<button type="button" onmouseover="demoEvent()">OVER</button>
+<!--sự kiện chuột rời khỏi nút thì gọi hàm ở dưới-->
+<button type="button" onmouseout="demoEvent()">OUT</button>
+<br>
+<br>
+<br>
+<input type="text" id="input" oninput="demoInput()">
+<input type="text" id="input1" onchange="demoInput1()">
+<p id="result"></p>
+<p id="result1"></p>
+</body>
+<script>
+    function demoEvent() {
+        alert("HelloWorld")
+    }
+
+    function demoInput() {
+        let a = document.getElementById("input").value
+        document.getElementById("result").innerHTML = a
+    }
+    function demoInput1() {
+        let b = document.getElementById("input1").value
+        document.getElementById("result1").innerHTML = b
+    }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label><input type="text" id="radius"></label>
+<p id="result"></p>
+<button onclick="bai3()">Tính</button>
+</body>
+<script>
+  //bai1
+  function bai1() {
+    let physic = parseFloat(prompt("Nhập vào điểm Lý: "))
+    let chemistry = parseFloat(prompt("Nhập vào điểm Hóa: "))
+    let biology = parseFloat(prompt("Nhập vào điểm Sinh: "))
+    let sumPoint = (physic + chemistry + biology)
+    let averagePoint = sumPoint / 3
+    alert("Điểm tổng 3 môn là: " + sumPoint.toFixed(2) +
+            ", điểm trung bình 3 môn là: " + averagePoint.toFixed(2))
+  }
+
+  //bai2
+  function bai2() {
+    let celsius = parseFloat(prompt("Nhập vào nhiệt độ bất kỳ: "))
+    let fah = (celsius * 9 / 5) + 32
+    alert("Nhiệt độ F là: " + fah.toFixed(2))
+  }
+
+  //bai3
+  function bai3() {
+    let radius = document.getElementById("radius").value
+    let perimeter = (radius * 2) * Math.PI
+    let area = Math.pow(radius, 2) * Math.PI
+    document.getElementById("result").innerHTML = "Chu vi hình tròn là: " + perimeter.toFixed(2) +
+            "m<br>Diện tích hình tròn là: " + area.toFixed(2) + "m<sup>2</sup>"
+  }
+  // bai1()
+  // bai2()
+</script>
+</html>
