@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="demo()">Click</button>
+<button onclick="demo1()">Click1</button>
+</body>
+<script>
+function demo() {
+    for (let i = 10;i < 20;) {
+        console.log(i)
+        i++
+    }
+    console.log(i)
+}
+
+function demo1() {
+    let num
+    let total = 0;
+    do {
+        num = +prompt("Enter a number: ");
+        alert(num);
+        total += num;
+
+    }
+    while( num != -1 )
+    alert(total)
+}
+</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Câu a: Tính hình vuông
+    <input type="text" id="side">
+    <button onclick="cauA()">CauA</button>
+</label>
+<p id="resultA"></p>
+<label>Câu b: Tính lũy thừa
+    <input type="text" id="heSoA">
+    <input type="text" id="heSoB">
+    <button onclick="cauB()">CauB</button>
+</label>
+<p id="resultB"></p>
+<label>Câu c: Tính tổng
+    <input type="text" id="numberA">
+    <input type="text" id="numberB">
+    <button onclick="cauC()">CauC</button>
+</label>
+<p id="resultC"></p>
+<label>Câu d: Tính thế kỷ
+    <input type="text" id="year">
+    <button onclick="cauD()">CauD</button>
+</label>
+<p id="resultD"></p>
+<label>Câu e: Kiểm tra tam giác
+    <input type="text" id="sideA">
+    <input type="text" id="sideB">
+    <input type="text" id="sideC">
+    <button onclick="cauE()">CauE</button>
+</label>
+<p id="resultE"></p>
+</body>
+<script>
+    function cauA() {
+        let side = +document.getElementById("side").value
+        let perimeter = side * 4
+        let area = side * side
+        document.getElementById("resultA").innerHTML = "Chu vi: " + perimeter +", diện tích: " + area
+    }
+
+    function cauB() {
+        let heSoA = document.getElementById("heSoA").value
+        let heSoB = document.getElementById("heSoB").value
+        let result1 = Math.pow(heSoA, 2)
+        let result2 = Math.pow(heSoA, heSoB)
+        document.getElementById("resultB").innerHTML = "a^2: " + result1 +", a^b: " + result2
+    }
+
+    function cauC() {
+        //code lấy giá trị từ id
+        let numberA = +document.getElementById("numberA").value
+        let numberB = +document.getElementById("numberB").value
+        let sum = 0
+        // if (numberA < numberB) {
+        //     sum = ((numberA + numberB) * (numberB - numberA + 1))/2
+        // } else if (numberA > numberB) {
+        //     sum = ((numberA + numberB) * (numberA - numberB + 1))/2
+        // } else {
+        //     sum = numberA
+        // }
+
+        //trị tuyệt đối là giá trị dương của 1 số nguyên bất kỳ: Math.abs()
+        sum = ((numberA + numberB) * (Math.abs(numberB - numberA) + 1))/2
+        document.getElementById("resultC").innerHTML = "Tổng là: " + sum
+    }
+
+    function cauD() {
+        let year = document.getElementById("year").value
+        let theKy
+        if (year % 100 === 0) {
+            theKy = parseInt(year/100)
+        } else {
+            theKy = parseInt(year/100) + 1
+        }
+        document.getElementById("resultD").innerHTML = "Thế kỷ là: " + theKy
+    }
+
+    function cauE() {
+        let sideA = +document.getElementById("sideA").value
+        let sideB = +document.getElementById("sideB").value
+        let sideC = +document.getElementById("sideC").value
+        let boolean1 = sideA > 0 && sideB >0 && sideC > 0
+        let boolean2 = ((sideA + sideB) > sideC) && ((sideA + sideC) > sideB) && ((sideC + sideB) > sideA)
+        let boolean3 = sideA === sideB && sideB === sideC
+        let boolean4 = sideA === sideB || sideA === sideC || sideB === sideC
+        let check1 = sideA**2 + sideB**2 === sideC**2
+        let check2 = sideA**2 + sideC**2 === sideB**2
+        let check3 = sideC**2 + sideB**2 === sideA**2
+        let boolean5 = check1 || check2 || check3
+        if (boolean1 && boolean2) {
+            if (boolean3) {
+                document.getElementById("resultE").innerHTML = "Tam giác đều"
+            } else if (boolean4) {
+                document.getElementById("resultE").innerHTML = "Tam giác cân"
+            } else if (boolean5){
+                document.getElementById("resultE").innerHTML = "Tam giác vuông"
+            } else {
+                document.getElementById("resultE").innerHTML = "Tam giác"
+            }
+        } else {
+            document.getElementById("resultE").innerHTML = "Không là tam giác"
+        }
+    }
+</script>
+</html>

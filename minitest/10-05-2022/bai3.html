@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="number1">
+<input type="text" id="number2">
+<button onclick="bai3()">Click</button>
+<h1 id="result"></h1>
+</body>
+<script>
+    //các bước:
+    //b1: tạo giao diện input, button
+    //b2: đặt id cho các element cần thiết
+    //b3: tạo hàm
+    //b4: lấy giá trị
+    //b5: tính toán
+    //b6: hiển thị giá trị
+    function bai3() {
+        let number1 = document.getElementById("number1").value
+        let number2 = document.getElementById("number2").value
+        let multi = number1 * number2
+        document.getElementById("result").innerHTML = multi
+    }
+</script>
+</html>
