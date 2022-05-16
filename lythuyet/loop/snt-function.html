@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function isPrime(N) {
+        if (N < 2) {
+            return false
+        } else {
+            //3 cấp độ của check số nguyên tố: < N; < N/2; <= căn bậc 2 của N
+            for (let i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i === 0) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
+    function displayPrime(amount) {
+        let count = 0
+        let N = 2
+        while (count < amount) {
+            if (isPrime(N)) {
+                document.write(N + "<br>")
+                count++
+            }
+            N++
+        }
+    }
+
+    function displayPrime2(value) {
+        let N = 2
+        while (N < value) {
+            if (isPrime(N)) {
+                document.write(N + "<br>")
+            }
+            N++
+        }
+    }
+
+    let boolean = isPrime(-1)
+    console.log(boolean)
+    let amount = +prompt("Nhập vào số số nguyên tố muốn hiển thị: ")
+    displayPrime(amount)
+    // let value = +prompt("Nhập vào giá trị: ")
+    // displayPrime2(value)
+</script>
+</html>

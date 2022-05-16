@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let count = +prompt("Nhập đê")
+    let n = 2
+    for (let i = 0; i < count; ) {
+        let check = false
+        for (let j = 2; j < n; j++) {
+            if (n % j === 0) {
+                check = true
+                break
+            }
+        }
+        if (!check) {
+            document.write(n + "<br>")
+            i++
+        }
+        n++
+    }
+</script>
+</html>

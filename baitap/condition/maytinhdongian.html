@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            text-align: center;
+        }
+
+        #display {
+            height: 25px;
+        }
+
+        button {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<!--<form>-->
+    <table>
+        <tr>
+            <td colspan="4"><label><input size="35" type="text" id="display"></label></td>
+        </tr>
+        <tr>
+            <td><label><button type="button" value="1" onclick="getValue(this.value)">1</button></label></td>
+            <td><label><button type="button" value="2" onclick="getValue(this.value)">2</button></label></td>
+            <td><label><button type="button" value="3" onclick="getValue(this.value)">3</button></label></td>
+            <td><label><button type="button" value="+" onclick="getValue(this.value)">+</button></label></td>
+        </tr>
+        <tr>
+            <td><label><button type="button" value="4" onclick="getValue(this.value)">4</button></label></td>
+            <td><label><button type="button" value="5" onclick="getValue(this.value)">5</button></label></td>
+            <td><label><button type="button" value="6" onclick="getValue(this.value)">6</button></label></td>
+            <td><label><button type="button" value="-" onclick="getValue(this.value)">-</button></label></td>
+        </tr>
+        <tr>
+            <td><label><button type="button" value="7" onclick="getValue(this.value)">7</button></label></td>
+            <td><label><button type="button" value="8" onclick="getValue(this.value)">8</button></label></td>
+            <td><label><button type="button" value="9" onclick="getValue(this.value)">9</button></label></td>
+            <td><label><button type="button" value="*" onclick="getValue(this.value)">x</button></label></td>
+        </tr>
+        <tr>
+            <td><label><button type="reset" value="C" onclick="clearValue()">C</button></label></td>
+            <td><label><button type="button" value="0" onclick="getValue(this.value)">0</button></label></td>
+            <td><label><button type="button" value="=" onclick="calculator()">=</button></label></td>
+            <td><label><button type="button" value="/" onclick="getValue(this.value)">/</button></label></td>
+        </tr>
+    </table>
+<!--</form>-->
+</body>
+<script>
+    function getValue(value) {
+        let display = document.getElementById("display").value
+        display += value
+        document.getElementById("display").value = display
+    }
+
+    function calculator() {
+        document.getElementById("display").value = eval(document.getElementById("display").value)
+    }
+
+    function clearValue() {
+        document.getElementById("display").value = ""
+    }
+</script>
+</html>

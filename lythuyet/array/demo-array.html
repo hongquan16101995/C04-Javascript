@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // let arr = [8, 9, 10, 15]
+    let arr = new Array(10)
+    arr[1] = 100
+    console.log(arr) //log mảng
+    console.log(arr.length) //độ dài mảng
+    console.log(arr[1]) //giá trị phần tử ở vị trí index = 1
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log("Giá trị của phần tử thứ " + i + " là: " + arr[i])
+    }
+
+    for (let index in arr) {
+        console.log("Vị trí index thứ " + index)
+    }
+
+    for (let index of arr) {
+        console.log("Giá trị lần lượt là: " + index)
+    }
+
+</script>
+</html>

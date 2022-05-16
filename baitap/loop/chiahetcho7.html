@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //thịnh
+    let sum = 0
+    for (let i = 0; i <= 203; i += 7) {
+        sum += i
+    }
+    console.log(sum)
+
+    //đặng thắng
+    let num = 0
+    let sum1 = 0
+    for (let i = 0; i < 29; i++) {
+        num = num + 7
+        sum1 += num
+    }
+    console.log(sum1)
+
+    //khoa
+    let sum2 = 0
+    for (let i = 0; i <= 29; i++) {
+        sum2 += (i*7)
+    }
+    console.log(sum2)
+
+    let sum3 = 0
+    let count = 0
+    for (let i = 0; count <= 29 ; i++) {
+        if (i % 7 === 0) {
+            sum3 += i
+            count++
+        }
+    }
+    console.log(sum3)
+</script>
+</html>
