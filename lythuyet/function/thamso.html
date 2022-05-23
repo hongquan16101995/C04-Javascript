@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--khi trong body không có thẻ html thì body sẽ được coi là không tồn tại-->
+<!--onload được xác nhận khi load trong html lên-->
+<!--sự kiện trong html có thể gọi 1 hoặc nhiều hàm cùng lúc-->
+<body onload="alert(calNumber(10)); alertMessage() ">
+<p>a</p>
+</body>
+<script>
+
+  function alertMessage() {
+    alert("Xinchao")
+  }
+
+  // window.onload = displayNumber1
+  //tham số và giá trị trả về của hàm là dạng option, có thể có, có thể không
+  function displayNumber1() {
+    let number = +prompt("Nhập 1 số:")
+    let bp = number * number
+    console.log(bp)
+  }
+
+  // let number = +prompt("Nhập 1 số:")
+  function displayNumber2(num) {
+    let bp = num * num
+    console.log(bp)
+  }
+
+  function displayNumber3() {
+    let number = +prompt("Nhập 1 số:")
+    let bp = number * number
+    return bp
+  }
+
+  // let number = +prompt("Nhập 1 số:")
+  function displayNumber4(num) {
+    let bp = num * num
+    return bp
+  }
+
+  // displayNumber1()
+  // displayNumber2(number)
+  // let bp = displayNumber3()
+  // console.log(bp)
+  // let bp = displayNumber4(number)
+  // console.log(bp)
+
+  function calNumber(num) {
+    num += 1
+    return num
+  }
+</script>
+</html>

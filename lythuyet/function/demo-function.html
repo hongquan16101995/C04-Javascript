@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="display()">Display</button>
+</body>
+<script>
+  //cấu trúc cơ bản
+  function display() {
+    alert("C0422H1")
+  }
+  //gọi hàm, sử dụng hàm
+  // display()
+
+  //các hàm hay dùng
+  //có tham số, không gtri trả về
+  function sum(number1, number2) {
+    let sumValue = number1+number2
+    console.log(sumValue)
+  }
+
+  //không tham số, có giá trị trả về
+  function sum1() {
+    let number1 = 100
+    let number2 = 200
+    let sumValue = number1 + number2
+    return sumValue
+  }
+  sum(100, 200)
+  let sumValue = sum1()
+  console.log(sumValue)
+  console.log(sum1())
+  console.log(1000 + sum(100, 200))
+  console.log(1000 + sum1())
+
+  //có tham số, có giá trị trả về
+  function sum2(number1, number2) {
+    let sumValue = number1 + number2
+    return sumValue
+  }
+
+  let s = sum2(150, 200)
+  console.log(s)
+  console.log(sum2(150,200))
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas width="800px" height="500px" id="canvas" style="border: 1px solid"></canvas>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+</body>
+<script>
+    class Rectangle {
+        width;
+        height;
+
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        draw(x, y) {
+            let canvas = document.getElementById("canvas").getContext("2d");
+            canvas.fillStyle = "red";
+            canvas.fillRect(x, y, this.width, this.height);
+        }
+    }
+
+    let rec = new Rectangle(100, 100)
+    let rec1 = new Rectangle(150, 100)
+    let canvas = document.getElementById("canvas").getContext("2d");
+    let trucX = 100
+    let trucY = 10
+
+    function runRec() {
+        canvas.clearRect(0, 0, 800, 500)
+        if (trucY > 400) {
+            trucY = 10
+        }
+        // if (trucY === 400) {
+        //     return
+        // }
+        rec.draw(trucX, trucY)
+        rec1.draw(80, 400)
+        trucY += 10
+
+        // setTimeout(runRec, 100)
+    }
+
+    let timeOut;
+    function start() {
+        timeOut = setInterval(runRec, 1000)
+    }
+
+    function stop() {
+        clearInterval(timeOut)
+    }
+
+    window.onload = runRec;
+</script>
+</html>

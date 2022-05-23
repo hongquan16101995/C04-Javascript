@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas width="800px" height="500px" id="canvas" style="border: 1px solid"></canvas>
+<img src="a.png" id="image">
+</body>
+<script>
+  let canvas = document.getElementById("canvas").getContext("2d")
+
+  canvas.fillStyle = "red"
+  canvas.fillRect(10, 10, 200, 80)
+  canvas.fillRect(10, 100, 150, 120)
+  canvas.fillRect(50, 300, 150, 150)
+
+  canvas.fillStyle = "#000000"
+  canvas.beginPath()
+  canvas.arc(400, 200, 80, 0, Math.PI * 2)
+  // canvas.fill()
+  canvas.stroke()
+
+  canvas.moveTo(400, 10)
+  canvas.lineTo(600, 150)
+  canvas.stroke()
+
+  let image = document.getElementById("image")
+  image.style.display = "none"
+  canvas.drawImage(image, 600, 300, 100, 80)
+
+
+</script>
+</html>

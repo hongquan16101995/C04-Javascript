@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //khởi tạo lớp với từ khóa class
+    class Battery {
+        //các thuộc tính của lớp
+        energy;
+        name;
+
+        //hàm khởi tạo (2 tham số tương ứng 2 thuộc tính)
+        constructor(energy, name) {
+            this.energy = energy;
+            this.name = name;
+        }
+
+        //các phương thức của lớp Battery
+        //các cặp phương thức getter và setter nên có cho các thuộc tính
+        getEnergy() {
+            return this.energy;
+        }
+
+        setEnergy(energy) {
+            this.energy = energy
+        }
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    }
+
+    //khởi tạo đối tượng cụ thể từ lớp Battery
+    let bat1 = new Battery(100, "Pin1");
+    let bat2 = new Battery(10, "Pin2");
+    //lấy thuộc tính và gọi phương thức của đối tượng cụ thể thông qua dấu chấm
+    console.log(bat1.getEnergy());
+    console.log(bat1.energy);
+    bat1.setEnergy(20)
+    console.log(bat1.getEnergy())
+    bat1.energy = 50
+    console.log(bat1.getEnergy())
+
+</script>
+</html>
